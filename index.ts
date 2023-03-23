@@ -30,7 +30,7 @@ export const truncate = (str: string, length: number) => {
 };
 
 //FORMAT KOBO FOR DISPLAY
-const formatKoboAmountForDisplay = (amount: number): string => {
+export const formatKoboAmountForDisplay = (amount: number): string => {
   //kobo amount to format
   return new Intl.NumberFormat("en-NG", {
     style: "currency",
