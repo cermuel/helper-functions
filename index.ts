@@ -37,3 +37,11 @@ export const formatKoboAmountForDisplay = (amount: number): string => {
     currency: "NGN",
   }).format(amount / 100);
 };
+
+//REVERSE OBJECT 
+export function reverseObject(obj: object){
+  //Changes object keys to object values and vice versa
+  return Object.fromEntries(
+      Object.entries(obj).map((item) => item.reverse())
+    ); 
+}
