@@ -45,3 +45,48 @@ export function reverseObject(obj: object){
       Object.entries(obj).map((item) => item.reverse())
     ); 
 }
+
+
+//PASSWORD STRENGTH CHECKER
+
+export const validatePasswordStrength = (password: string) => {
+  let strength: number = 0;
+  const feedback = [];
+  let strong: boolean = false;
+
+  if (password.length >= 10) {
+    strength++;
+  } else {
+    feedback.push("Must be 10 characters of greater");
+  }
+
+  if (/[a-z]/.test(password)) {
+    strength++;
+  } else {
+    feedback.push("Must have at least 1 lowercase letter");
+  }
+
+  if (/[A-Z]/.test(password)) {
+    strength++;
+  } else {
+    feedback.push("Must have at least 1 uppercase letter");
+  }
+
+  if (/[0-9]/.test(password)) {
+    strength++;
+  } else {
+    feedback.push("Must have at least 1 number");
+  }
+
+  if (/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(password)) {
+    strength++;
+  } else {
+    feedback.push("Must have at least 1 special character");
+  }
+
+  if (strength >= 5) {
+    strong = true;
+  }
+  return { feedback, strong };
+};
+
