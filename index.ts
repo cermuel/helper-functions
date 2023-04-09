@@ -49,7 +49,7 @@ export function reverseObject(obj: object){
 
 //PASSWORD STRENGTH CHECKER
 
-export const validatePasswordStrength = (password: string) => {
+export const validatePasswordStrength = (password: string | any) => {
   let strength: number = 0;
   const feedback = [];
   let strong: boolean = false;
