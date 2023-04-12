@@ -90,3 +90,15 @@ export const validatePasswordStrength = (password: string | any) => {
   return { feedback, strong };
 };
 
+
+//INCHES TO FEETS
+export const InchToFeet = (inch: string | number) => {
+  let feet: number;
+  if (typeof inch == "string") {
+    feet = Number(inch) * 0.083;
+  } else {
+    feet = inch * 0.083;
+  }
+  return feet;
+};
+
